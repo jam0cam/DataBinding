@@ -1,11 +1,14 @@
 package com.handy.databinding;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.android.databinding.library.baseAdapters.BR;
 import com.squareup.picasso.Picasso;
 
-public class UserViewModel {
+public class UserViewModel extends BaseObservable {
 
     private String mUserName;
     private String mPassword;
@@ -21,6 +24,7 @@ public class UserViewModel {
         mClickListener = listener;
     }
 
+
     public String getImageUrl() {
         return mImageUrl;
     }
@@ -33,12 +37,14 @@ public class UserViewModel {
         mPasswordEnabled = passwordEnabled;
     }
 
+    @Bindable
     public String getUserName() {
         return mUserName;
     }
 
     public void setUserName(String userName) {
         mUserName = userName;
+        notifyPropertyChanged(BR.userName);
     }
 
     public String getPassword() {
