@@ -31,8 +31,4 @@ public class MainActivity extends AppCompatActivity {
     public void showToast() {
         Toast.makeText(this, "hello world", Toast.LENGTH_SHORT).show();
     }
-
-    public void togglePasswordVisibility() {
-        mBinding.passwordField.setVisibility(mBinding.enablePassword.isChecked() ? View.VISIBLE : View.INVISIBLE);
-    }
 }

@@ -30,12 +30,14 @@ public class UserViewModel extends BaseObservable {
         return mImageUrl;
     }
 
+    @Bindable
     public boolean isPasswordEnabled() {
         return mPasswordEnabled;
     }
 
     public void setPasswordEnabled(final boolean passwordEnabled) {
         mPasswordEnabled = passwordEnabled;
+        notifyPropertyChanged(BR.passwordEnabled);
     }
 
     @Bindable
