@@ -2,6 +2,7 @@ package com.handy.databinding;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.databinding.BindingAdapter;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -61,6 +62,7 @@ public class UserViewModel extends BaseObservable {
         }
     }
 
+    @BindingAdapter({"bind:imageUrl"})
     public static void loadImage(ImageView view, String url) {
         Picasso.with(view.getContext()).load(url).into(view);
     }

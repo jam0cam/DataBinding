@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.handy.databinding.databinding.ActivityMainBinding;
-import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mBinding.setUser(mUserViewModel);
-
-        Picasso.with(this).load(mUserViewModel.getImageUrl()).into(mBinding.imageView);
 
         mBinding.button.setOnClickListener(new View.OnClickListener() {
             @Override
